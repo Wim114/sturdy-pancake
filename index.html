@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VetCare Wien - Ihre Tierarztpraxis in Wien | 24h Notdienst</title>
-    <meta name="description" content="VetCare Wien - Moderne Tierarztpraxis in Wien. Kompetente Betreuung für Hunde, Katzen und Kleintiere. 24h Notdienst verfügbar. ☎ +43 1 321 765 4321">
+    <title>Tierambulanz Prater - Ihre Tierarztpraxis in Wien | 24h Notdienst</title>
+    <meta name="description" content="Tierambulanz Prater - Moderne Tierarztpraxis in Wien. Kompetente Betreuung für Hunde, Katzen und Kleintiere. 24h Notdienst verfügbar. ☎ +43 01 7269181">
     <meta name="keywords" content="Tierarzt Wien, Tierarztpraxis, Notdienst, Veterinär, Tierklinik Wien">
-    <meta property="og:title" content="VetCare Wien - Moderne Tierarztpraxis">
-    <meta property="og:description" content="Kompetente und liebevolle Betreuung für Ihre Haustiere in Wien. 24-Stunden-Notdienst verfügbar.">
+    <meta property="og:title" content="Tierambulanz Prater - Moderne Tierarztpraxis">
+    <meta property="og:description" content="Kompetente und liebevolle Betreuung für Ihre Haustiere. Termine nach Vereinbarung.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_AT">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2300ace2'/%3E%3Cpath d='M50 25c-3 0-5.5 2.5-5.5 5.5s2.5 5.5 5.5 5.5 5.5-2.5 5.5-5.5S53 25 50 25zm-15 8c-3 0-5.5 2.5-5.5 5.5S32 44 35 44s5.5-2.5 5.5-5.5S38 33 35 33zm30 0c-3 0-5.5 2.5-5.5 5.5S62 44 65 44s5.5-2.5 5.5-5.5S68 33 65 33zm-15 12c-8 0-14 6-14 14v6c0 2 2 4 4 4h20c2 0 4-2 4-4v-6c0-8-6-14-14-14z' fill='white'/%3E%3C/svg%3E">
+    <link rel="icon" type="image/jpeg" href="images/clinic2.jpg">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
@@ -77,6 +77,10 @@
 
         .loader-logo {
             animation: pulse 1.5s ease-in-out infinite;
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
         }
 
         @keyframes pulse {
@@ -113,11 +117,13 @@
             text-decoration: none;
         }
 
-        .logo-svg {
+        .logo-img {
             width: 50px;
             height: 50px;
             margin-right: 15px;
             transition: transform 0.3s ease;
+            border-radius: 8px;
+            object-fit: cover;
         }
 
         .navbar-brand:hover .logo-svg {
@@ -171,32 +177,6 @@
             width: 80%;
         }
 
-        .emergency-btn {
-            background: var(--danger);
-            color: white !important;
-            padding: 0.8rem 1.5rem !important;
-            border-radius: 50px;
-            font-weight: 600;
-            animation: emergencyPulse 2s infinite;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        @keyframes emergencyPulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(255, 68, 68, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(255, 68, 68, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(255, 68, 68, 0);
-            }
-        }
-
-        /* Hero Section */
         .hero-section {
             background: linear-gradient(rgba(0, 93, 131, 0.7), rgba(0, 172, 226, 0.7)), url('images/AdobeStock_481854656-1-scaled-545451366.jpg') center/cover no-repeat;
             padding: 100px 0;
@@ -207,9 +187,6 @@
             align-items: center;
         }
 
-        .hero-section::before {
-            display: none; /* This removes the previous pattern overlay */
-        }
 
         @keyframes float {
             0% { transform: translate(0, 0); }
@@ -719,12 +696,31 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
+                   .hero-content h1 {
+                font-size: 1.8rem;
+                line-height: 1.3;
             }
 
             .hero-content p {
-                font-size: 1.1rem;
+                font-size: 1rem;
+            }
+
+            .brand-main {
+                font-size: 1.2rem;
+            }
+
+            .brand-sub {
+                font-size: 0.7rem;
+            }
+
+            /* Navigation improvements */
+            .navbar-toggler {
+                border: none;
+                padding: 4px 8px;
+            }
+
+            .navbar-toggler:focus {
+                box-shadow: none;
             }
 
             .navbar-nav {
@@ -733,24 +729,291 @@
                 background: rgba(255,255,255,0.98);
                 margin-top: 1rem;
                 border-radius: 10px;
+                max-height: 70vh;
+                overflow-y: auto;
             }
 
-            .emergency-btn {
-                margin-top: 1rem;
+            .navbar-nav .nav-link {
+                padding: 0.8rem 1rem;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
             }
 
-            .section-title h2 {
-                font-size: 2rem;
+            /* Hero section mobile */
+            .hero-section {
+                padding: 60px 0;
+                min-height: auto;
+            }
+
+            .hero-buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn-primary-custom,
+            .btn-secondary-custom {
+                width: 100%;
+                margin: 0;
+                padding: 12px 25px;
+            }
+
+            /* Opening hours mobile */
+            .opening-hours {
+                margin-top: 2rem;
+                padding: 1.5rem;
+            }
+
+            .hours-table li {
+                font-size: 0.9rem;
+                padding: 0.6rem 0;
+            }
+
+            .hours-table .time {
+                font-size: 0.85rem;
+            }
+
+            /* Statistics mobile */
+            .stats-section {
+                padding: 40px 0;
+            }
+
+            .stat-box {
+                padding: 1rem;
             }
 
             .stat-number {
                 font-size: 2rem;
             }
 
-            .brand-main {
+            .stat-label {
+                font-size: 0.9rem;
+            }
+
+            /* Section titles */
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title p {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+
+            /* Mission cards mobile */
+            .mission-section {
+                padding: 50px 0;
+            }
+
+            .mission-card {
+                padding: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .mission-card-icon {
+                font-size: 3rem;
+            }
+
+            .mission-card h3 {
+                font-size: 1.2rem;
+            }
+
+            .mission-card p {
+                font-size: 0.9rem;
+            }
+
+            /* Services mobile */
+            .services-section {
+                padding: 50px 0;
+            }
+
+            .service-box {
+                padding: 1.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .service-box:hover {
+                transform: translateX(0) translateY(-5px);
+            }
+
+            .service-box i {
+                font-size: 2.5rem;
+            }
+
+            .service-box h4 {
+                font-size: 1.2rem;
+            }
+
+            .service-box p {
+                font-size: 0.9rem;
+            }
+
+            /* Team section mobile */
+            .team-section {
+                padding: 50px 0;
+            }
+
+            .team-member {
+                margin-bottom: 1.5rem;
+            }
+
+            .team-member-image {
+                height: 250px;
+            }
+
+            .team-info h4 {
+                font-size: 1.1rem;
+            }
+
+            .team-info .position,
+            .team-info .credentials {
+                font-size: 0.85rem;
+            }
+
+            /* Appointment form mobile */
+            .appointment-section {
+                padding: 40px 0;
+            }
+
+            .appointment-form {
+                padding: 2rem 1rem;
+            }
+
+            .appointment-form h2 {
                 font-size: 1.5rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .appointment-form p {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .form-control-custom {
+                padding: 12px 20px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+
+            textarea.form-control-custom {
+                min-height: 80px;
+            }
+
+            .submit-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+
+            /* Footer mobile */
+            footer {
+                padding: 40px 0 20px;
+            }
+
+            .footer-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .footer-content ul li {
+                font-size: 0.9rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .footer-bottom {
+                font-size: 0.8rem;
+                line-height: 1.5;
+            }
+
+            /* Cookie banner mobile */
+            .cookie-banner {
+                padding: 15px;
+            }
+
+            .cookie-banner p {
+                font-size: 0.85rem;
+                margin-bottom: 10px;
+            }
+
+            .cookie-banner .btn {
+                font-size: 0.85rem;
+                padding: 6px 15px;
+                margin: 5px 2px;
+            }
+
+            /* Map mobile */
+            iframe {
+                height: 250px !important;
+            }
+
+            /* Back to top button */
+            #backToTop {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+
+            /* Container padding */
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            /* Disable hover effects on mobile */
+            .mission-card:hover,
+            .service-box:hover,
+            .team-member:hover {
+                transform: none;
             }
         }
+
+        @media (max-width: 375px) {
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .brand-main {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-height: 500px) and (orientation: landscape) {
+            .hero-section {
+                min-height: 400px;
+                padding: 30px 0;
+            }
+
+            .navbar {
+                padding: 0.4rem 0;
+            }
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .mission-card:hover,
+            .service-box:hover,
+            .team-member:hover,
+            .hours-table li:hover {
+                transform: none;
+                background: inherit;
+                padding-left: 0;
+                margin: 0;
+            }
+        .nav-link,
+            .btn,
+            button,
+            a {
+                min-height: 44px;
+                display: flex;
+                align-items: center;
+            }
+        }
+
 
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
@@ -782,10 +1045,7 @@
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader">
-            <svg class="loader-logo" width="80" height="80" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="45" fill="#00ace2"/>
-                <path d="M50 25c-3 0-5.5 2.5-5.5 5.5s2.5 5.5 5.5 5.5 5.5-2.5 5.5-5.5S53 25 50 25zm-15 8c-3 0-5.5 2.5-5.5 5.5S32 44 35 44s5.5-2.5 5.5-5.5S38 33 35 33zm30 0c-3 0-5.5 2.5-5.5 5.5S62 44 65 44s5.5-2.5 5.5-5.5S68 33 65 33zm-15 12c-8 0-14 6-14 14v6c0 2 2 4 4 4h20c2 0 4-2 4-4v-6c0-8-6-14-14-14z" fill="white"/>
-            </svg>
+            <img src="images/clinic2.jpg" alt="VetCare Wien Logo" class="loader-logo">
         </div>
     </div>
 
@@ -794,12 +1054,9 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="#home">
-                    <svg class="logo-svg" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="45" fill="#00ace2"/>
-                        <path d="M50 25c-3 0-5.5 2.5-5.5 5.5s2.5 5.5 5.5 5.5 5.5-2.5 5.5-5.5S53 25 50 25zm-15 8c-3 0-5.5 2.5-5.5 5.5S32 44 35 44s5.5-2.5 5.5-5.5S38 33 35 33zm30 0c-3 0-5.5 2.5-5.5 5.5S62 44 65 44s5.5-2.5 5.5-5.5S68 33 65 33zm-15 12c-8 0-14 6-14 14v6c0 2 2 4 4 4h20c2 0 4-2 4-4v-6c0-8-6-14-14-14z" fill="white"/>
-                    </svg>
+                    <img src="images/clinic2.jpg" alt="VetCare Wien Logo" class="logo-img">
                     <div class="brand-text">
-                        <span class="brand-main">VetCare Wien</span>
+                        <span class="brand-main">Tierambulanz Prater</span>
                         <span class="brand-sub">Moderne Tiermedizin mit Herz</span>
                     </div>
                 </a>
@@ -823,11 +1080,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Kontakt</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="emergency-btn" href="tel:+4313217654321">
-                                <i class="fas fa-phone-alt"></i> NOTDIENST 24/7
-                            </a>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -855,20 +1108,17 @@
                         <ul class="hours-table">
                             <li>
                                 <span class="day">Montag - Freitag</span>
-                                <span class="time">08:00 - 20:00</span>
+                                <span class="time">>09:00-12:00 & 16:00-19:00</span>
                             </li>
                             <li>
                                 <span class="day">Samstag</span>
-                                <span class="time">09:00 - 18:00</span>
+                                <span class="time">09:00 - 12:00</span>
                             </li>
                             <li>
                                 <span class="day">Sonntag</span>
-                                <span class="time">10:00 - 16:00</span>
+                                <span class="time" style="color: #ff4444; font-weight: 700;">GESCHLOSSEN</span>
                             </li>
-                            <li>
-                                <span class="day">Notdienst</span>
-                                <span class="time" style="color: #ff4444; font-weight: 700;">24/7 verfügbar</span>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -882,26 +1132,26 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="stat-box" data-aos="zoom-in">
-                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-number" data-target="10">0</div>
                         <div class="stat-label">Jahre Erfahrung</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="stat-box" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="stat-number" data-target="8500">0</div>
+                        <div class="stat-number" data-target="+300">0</div>
                         <div class="stat-label">Glückliche Patienten</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="stat-box" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="stat-number" data-target="12">0</div>
+                        <div class="stat-number" data-target="2">0</div>
                         <div class="stat-label">Spezialisierte Tierärzte</div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="stat-box" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Notdienst</div>
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Tage die Woche</div>
                     </div>
                 </div>
             </div>
@@ -992,20 +1242,8 @@
                         <p>Professionelle Zahnreinigung, Zahnextraktionen und Kieferchirurgie.</p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="service-box" data-aos="fade-right">
-                        <i class="fas fa-ambulance"></i>
-                        <h4>Notfallmedizin</h4>
-                        <p>24/7 Notdienst für akute Fälle mit sofortiger Versorgung.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="service-box" data-aos="fade-left">
-                        <i class="fas fa-dragon"></i>
-                        <h4>Exotische Tiere</h4>
-                        <p>Spezialisierte Betreuung für Reptilien, Vögel und kleine Säugetiere.</p>
-                    </div>
-                </div>
+
+
             </div>
         </div>
     </section>
@@ -1118,7 +1356,7 @@
         <div class="container">
             <div class="row footer-content">
                 <div class="col-md-4 mb-4">
-                    <h3>VetCare Wien</h3>
+                    <h3>Tierambulanz Prater Wien</h3>
                     <p class="mb-3">Ihre moderne Tierarztpraxis im Herzen von Wien. Wir sind für Sie und Ihre Lieblinge da!</p>
                     <div class="social-links mt-4">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -1132,21 +1370,18 @@
                     <ul>
                         <li>
                             <i class="fas fa-phone"></i>
-                            <a href="tel:+4313217654321">+43 1 321 765 4321</a>
+                            <a href="tel:+43 01 7269181">+43 01 7269181</a>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@vetcare-wien.at">info@vetcare-wien.at</a>
+                            <a href="mailto:tierambulanzprater@gmx.at">tierambulanzprater@gmx.at</a>
                         </li>
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
                             Mariahilfer Straße 123<br>
                             <span style="margin-left: 30px;">1060 Wien, Österreich</span>
                         </li>
-                        <li>
-                            <i class="fas fa-ambulance"></i>
-                            <strong style="color: #ff4444;">Notdienst 24/7</strong>
-                        </li>
+
                     </ul>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -1156,7 +1391,6 @@
                         <li><i class="fas fa-chevron-right"></i> <a href="#team">Unser Team</a></li>
                         <li><i class="fas fa-chevron-right"></i> <a href="#appointment">Termin vereinbaren</a></li>
                         <li><i class="fas fa-chevron-right"></i> <a href="#">Notfallnummern</a></li>
-                        <li><i class="fas fa-chevron-right"></i> <a href="#">Hausbesuche</a></li>
                         <li><i class="fas fa-chevron-right"></i> <a href="#">Karriere</a></li>
                     </ul>
                 </div>
@@ -1174,7 +1408,7 @@
     <!-- Map Section -->
     <div style="width: 100%; height: 400px; background: #ddd; position: relative;">
         <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.094066440435!2d16.35347931586387!3d48.19890395423564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d07986fcad78b%3A0x5c9b1f6e3d8a0a5a!2sMariahilfer%20Stra%C3%9Fe%20123%2C%201060%20Wien!5e0!3m2!1sde!2sat!4v1234567890"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1329.2099505803017!2d16.398223274241484!3d48.217788551029585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476d071ac36c0371%3A0xb1d4028f922cf125!2sTierambulanz%20Prater!5e0!3m2!1sit!2sat!4v1756032450440!5m2!1sit!2sat"
             width="100%"
             height="400"
             style="border:0;"
@@ -1363,12 +1597,7 @@
 
         showCookieBanner();
 
-        // Emergency button confirmation
-        document.querySelector('.emergency-btn').addEventListener('click', function(e) {
-            if (!confirm('Möchten Sie jetzt unseren Notdienst anrufen?\n\nBei lebensbedrohlichen Notfällen rufen Sie uns sofort an!')) {
-                e.preventDefault();
-            }
-        });
+
 
         // Active navigation highlighting
         window.addEventListener('scroll', () => {
@@ -1392,10 +1621,8 @@
         });
 
         // Console welcome message - Fixed version
-        console.log('%c🐾 Willkommen bei VetCare Wien! 🐾', 'color: #00ace2; font-size: 20px; font-weight: bold;');
+        console.log('%c🐾 Willkommen bei Tierambulanz Prater! 🐾', 'color: #00ace2; font-size: 20px; font-weight: bold;');
         console.log('%cWir kümmern uns um Ihre Lieblinge mit Herz und Kompetenz.', 'color: #005d83; font-size: 14px;');
-        console.log('%c📞 Notdienst 24/7: +43 1 321 765 4321', 'color: #ff4444; font-size: 12px; font-weight: bold;');
     </script>
 </body>
-
 </html>
